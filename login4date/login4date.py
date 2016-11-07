@@ -24,7 +24,7 @@ post_data={'csrfmiddlewaretoken' : r1,
           }    
 s.post(res.url,data=post_data,headers=headers)
 r=s.get(hosturl)
-s.get(http://oa.unitedmne.com/attendance/clock/)
+s.get('http://oa.unitedmne.com/attendance/clock/')
 
 #print r.text
 #print '-----------------------------------'
