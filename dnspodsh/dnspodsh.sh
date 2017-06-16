@@ -10,7 +10,7 @@
 # 更新日期：2016-09-23
 ##############################
 
-login_token=""
+login_token="32384,c90cde40530c2bef7923429223633e0a"
 login_email=''
 login_password=''
 format="json"
@@ -33,7 +33,7 @@ ipUrl='http://members.3322.org/dyndns/getip'
 #domainList[1]='domain2.com subdomain subdomain2'
 
 # 这里是只修改一个子域名的例子
-domainList[0]='example.com subdomain'
+domainList[0]='jlong.win \* @ www'
 
 # 多长时间比较一次ip地址
 delay=3
@@ -272,13 +272,13 @@ go()
 {
 	# 由于获取到的数据多了一些多余的字符，所以提取ip地址的部分
 	# 从api中获取当前的外网ip
-	# newip=$(curl -s $ipUrl|grep -o $(getRegexp 'value'))
-	newip=`/sbin/ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v 192.168|grep -v inet6|awk '{print $2}'|tr -d "addr:"`
+	newip=$(curl -s $ipUrl|grep -o $(getRegexp 'value'))
+	#newip=`/sbin/ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v 192.168|grep -v inet6|awk '{print $2}'|tr -d "addr:"`
 	# 如果获取最新ip错误，就继续等待下一次取值
 	if ! checkip "$newip";then
 		writeLog 'can not get new ip,waiting...'
 		sleep $delay
-		continue
+	#	continue
 	fi
 	echo 'wan ip:'$newip
 	echo $commonPost

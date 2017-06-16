@@ -23,7 +23,7 @@ receiver = ["yansheng1003@qq.com","yansheng1003@126.com"]
 subject = "[RPI]IP CHANGED"
 
 # file_path config
-file_path = "/root/rootcrons/lastip.txt"
+file_path = "/root/Script/getMyPiIp/lastip.txt"
 
 def sendEmail(msghtml):
     msgRoot = MIMEMultipart('related')
