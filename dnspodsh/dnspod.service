@@ -1,0 +1,6 @@
+[Unit]
+Description=DDNS
+
+[Service]
+Type=simple
+ExecStart=/root/Script/dnspodsh/dnspodsh.sh &>/dev/null

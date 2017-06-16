@@ -1,0 +1,6 @@
+[Unit]
+Description=Get ip for an hour
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python2 /root/Script/getMyPiIp/reportip.py
